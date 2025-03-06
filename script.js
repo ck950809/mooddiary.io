@@ -1,20 +1,28 @@
-// 心情对应的背景颜色
+// 心情对应的背景颜色（调整为更柔和的颜色）
 const moodColors = {
-    happy: '#FFE5A3', // 温暖的黄色
-    calm: '#E0FFE0',  // 柔和的绿色
-    sad: '#E0F4FF',   // 淡淡的蓝色
-    angry: '#FFE0E0'  // 淡淡的红色
+    happy: '#FFF7E6', // 温暖的米黄色
+    calm: '#F0F7F0',  // 柔和的薄荷绿
+    sad: '#E6F3FF',   // 淡淡的天蓝色
+    angry: '#FFF0F0'  // 淡淡的粉色
 };
 
 let currentMood = '';
 
 // 初始化
 document.addEventListener('DOMContentLoaded', () => {
+    // 设置默认背景色
+    document.body.style.backgroundColor = '#E6F3FF';
+    
     // 添加心情按钮点击事件
     document.querySelectorAll('.mood-btn').forEach(btn => {
         btn.addEventListener('click', () => {
+            // 更新当前心情
             currentMood = btn.dataset.mood;
+            
+            // 更新背景颜色
             document.body.style.backgroundColor = moodColors[currentMood];
+            
+            // 更新按钮选中状态
             document.querySelectorAll('.mood-btn').forEach(b => 
                 b.style.border = '2px solid transparent');
             btn.style.border = '2px solid #333';
