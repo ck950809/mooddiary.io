@@ -32,10 +32,41 @@
             cursor: pointer;
         }
         .diary-entry {
-            margin: 20px 0;
+            margin: 0 0 15px 0;
             padding: 15px;
             border-radius: 8px;
-            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .diary-entry:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        .diary-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .diary-date {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+        .mood-emoji {
+            font-size: 1.2em;
+        }
+        .diary-content {
+            font-size: 0.95em;
+            line-height: 1.5;
+            white-space: pre-wrap;
+        }
+        .right-panel {
+            flex: 0 0 40%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 0 10px;
+            scrollbar-width: thin;
         }
         textarea {
             width: 100%;
@@ -62,5 +93,7 @@
         </div>
         <div id="diaryList"></div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html> 
